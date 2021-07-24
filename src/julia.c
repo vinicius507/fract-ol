@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mandelbrot.c                                       :+:      :+:    :+:   */
+/*   julia.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/23 16:17:43 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/07/23 16:17:43 by vgoncalv         ###   ########.fr       */
+/*   Created: 2021/07/24 11:56:48 by vgoncalv          #+#    #+#             */
+/*   Updated: 2021/07/24 11:56:48 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-#include <stdio.h>
 
-int	mandelbrot(t_fractol *fractol)
+int	julia(t_fractol *fractol)
 {
-	t_complex	z;
+	t_complex	c;
 	int			i;
 
-	z = assign(0, 0);
+	c = fractol->c;
 	i = 0;
-	while (abs_squared(z) <= 4.0 && i++ < MAX_ITER)
+	while (abs_squared(c) <= 4.0 && i++ < MAX_ITER)
 	{
-		z = multiply(z, z);
-		z = add(z, fractol->c);
+		c = multiply(c, c);
+		c = add(c, fractol->z);
 	}
 	return (i);
 }
