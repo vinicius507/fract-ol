@@ -29,6 +29,6 @@ t_complex	add(t_complex z1, t_complex z2);
 t_complex	multiply(t_complex z1, t_complex z2);
 
 /* Gets the module of a `t_complex` number */
-long double	module(t_complex z);
+long double	abs_squared(t_complex z);
 
 #endif

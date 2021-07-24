@@ -17,6 +17,7 @@ int	main(int argc, char **argv)
 {
 	t_fractol	fractol;
 
+	set_defaults(&fractol);
 	argparse(argc, argv, &fractol);
 	return (0);
 }
