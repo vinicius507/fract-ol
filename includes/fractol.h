@@ -21,19 +21,30 @@
 # include "mlx.h"
 # include "error.h"
 
+# define MAX_ITER 80
+
+/* Fractol Data Structure. The `width` and the `height` refer to the `window`
+ * geometry. `z` and `c` are `t_complex` numbers for generating the fractals,
+ * in which `c` refers to the current coordinate being evaluated. */
 typedef struct s_fractol
 {
-	int		width;
-	int		height;
-	void	*mlx;
-	void	*window;
-	int		(*fractal)();
+	int			width;
+	int			height;
+	void		*mlx;
+	void		*window;
+	t_complex	z;
+	t_complex	c;
+	int			(*fractal)();
 }	t_fractol;
 
 void	print_help(const char *fractol);
 
 void	argparse(int argc, char **argv, t_fractol *fractol);
 
-int		mandelbrot(t_complex c);
+int		mandelbrot(t_fractol *fractol);
+
+int		julia(t_fractol *fractol);
+
+void	set_defaults(t_fractol *fractol);
 
 #endif
