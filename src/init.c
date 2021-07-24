@@ -11,8 +11,3 @@
 /* ************************************************************************** */
 
 #include "fractol.h"
-
-void	init(t_fractol *fractol)
-{
-	fractol->mlx = mlx_init();
-}

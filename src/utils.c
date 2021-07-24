@@ -17,3 +17,10 @@ void	print_help(const char *fractol)
 	printf("Usage: %s [FRACTAL]\n\n"
 		"Fractal options are: Mandelbrot, Julia\n", fractol);
 }
+
+void	set_defaults(t_fractol *fractol)
+{
+	fractol->fractal = NULL;
+	fractol->width = 840;
+	fractol->height = 640;
+}
