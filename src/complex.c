@@ -40,7 +40,7 @@ inline t_complex	multiply(t_complex z1, t_complex z2)
 	return (res);
 }
 
-inline long double	module(t_complex z)
+inline long double	abs_squared(t_complex z)
 {
-	return (sqrt((z.real * z.real) + (z.complex * z.complex)));
+	return (pow(z.real, 2.0) + pow(z.complex, 2.0));
 }

@@ -12,6 +12,17 @@
 
 #include "fractol.h"
 
+static int	set_fractal(char *arg, t_fractol *fractol)
+{
+	if (!ft_strncmp(arg, "Mandelbrot", 9))
+		fractol->fractal = mandelbrot;
+	else if (!ft_strncmp(arg, "Julia", 5))
+		fractol->fractal = julia;
+	else
+		return (1);
+	return (0);
+}
+
 void	argparse(int argc, char **argv, t_fractol *fractol)
 {
 	int		i;
@@ -21,18 +32,16 @@ void	argparse(int argc, char **argv, t_fractol *fractol)
 	i = 0;
 	while (++i < argc)
 	{
-		if (!ft_strncmp(argv[i], "Mandelbrot", 9))
-		{
-			fractol->fractal = mandelbrot;
-			break ;
-		}
-		else if (!ft_strncmp(argv[i], "--help", 6))
+		if (!ft_strncmp(argv[i], "--help", 6))
 		{
 			print_help(argv[0]);
 			exit(0);
 		}
 		else
-			break ;
+		{
+			if (fractol->fractal != NULL && set_fractal(argv[i], fractol))
+				break ;
+		}
 	}
 	if (i < argc)
 		arg_error(argv[0], argv[i], UNKNOWN_ARG);
