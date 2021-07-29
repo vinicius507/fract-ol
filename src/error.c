@@ -24,11 +24,11 @@ static void	arg_error_msg(t_error code, const char *arg, const char *fractol)
 		printf("%s: invalid option passed to fractal '%s'\n", fractol, arg);
 }
 
-void	raise(t_error code, const char *arg, const char *fractol)
+void	raise(t_error code, const char *arg, t_fractol *fractol)
 {
 	if (code
 		& (UNKNOWN_ARG | NO_ARG | NO_FRACTAL_OPTIONS | INVALID_FRACTAL_OPTIONS))
-		arg_error_msg(code, arg, fractol);
-	print_help(fractol);
-	exit(code);
+		arg_error_msg(code, arg, fractol->fractol);
+	print_help(fractol->fractol);
+	kill(fractol, code);
 }

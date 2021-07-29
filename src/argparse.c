@@ -39,10 +39,10 @@ static int	set_fractal(int *i, int argc, char **argv, t_fractol *fractol)
 	{
 		*i += 1;
 		if (*i == argc)
-			raise(NO_FRACTAL_OPTIONS, NULL, argv[0]);
+			raise(NO_FRACTAL_OPTIONS, NULL, fractol);
 		fractol->fractal = julia;
 		if (get_julia_options(argv[*i], fractol))
-			raise(INVALID_FRACTAL_OPTIONS, argv[*i], argv[0]);
+			raise(INVALID_FRACTAL_OPTIONS, argv[*i], fractol);
 	}
 	return (0);
 }
@@ -51,15 +51,16 @@ void	argparse(int argc, char **argv, t_fractol *fractol)
 {
 	int		i;
 
+	fractol->fractol = argv[0];
 	if (argc == 1)
-		raise(NO_ARG, NULL, argv[0]);
+		raise(NO_ARG, NULL, fractol);
 	i = 0;
 	while (++i < argc)
 	{
 		if (!ft_strncmp(argv[i], "--help", 6))
 		{
-			print_help(argv[0]);
-			exit(0);
+			print_help(fractol->fractol);
+			kill(fractol, 0);
 		}
 		else
 		{
@@ -68,5 +69,5 @@ void	argparse(int argc, char **argv, t_fractol *fractol)
 		}
 	}
 	if (i < argc)
-		raise(UNKNOWN_ARG, argv[i], argv[0]);
+		raise(UNKNOWN_ARG, argv[i], fractol);
 }

@@ -23,6 +23,7 @@ void	print_help(const char *fractol)
 
 void	set_defaults(t_fractol *fractol)
 {
+	fractol->fractol = "fractol";
 	fractol->fractal = NULL;
 	fractol->mlx = NULL;
 	fractol->window = NULL;
@@ -30,4 +31,11 @@ void	set_defaults(t_fractol *fractol)
 	fractol->height = 640;
 	fractol->c = assign(0, 0);
 	fractol->z = assign(0, 0);
+}
+
+void	kill(t_fractol *fractol, int code)
+{
+	if (fractol->data)
+		free(fractol->data);
+	exit(code);
 }
