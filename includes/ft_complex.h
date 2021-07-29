@@ -28,7 +28,7 @@ t_complex	add(t_complex z1, t_complex z2);
 /* Multiplies two `t_complex` numbers */
 t_complex	multiply(t_complex z1, t_complex z2);
 
-/* Gets the module of a `t_complex` number */
+/* Gets the absolute value of a `t_complex` number, squared */
 long double	abs_squared(t_complex z);
 
 #endif
