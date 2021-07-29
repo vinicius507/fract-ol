@@ -21,7 +21,7 @@ int	keys(int key, void *f_ptr)
 	if (key == ESC_KEY || key == Q_KEY)
 	{
 		mlx_destroy_window(fractol->mlx, fractol->window);
-		exit(0);
+		kill(fractol, 0);
 	}
 	else
 		printf("Key Value: %d\n", key);
