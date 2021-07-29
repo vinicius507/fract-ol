@@ -14,13 +14,20 @@
 
 void	print_help(const char *fractol)
 {
-	printf("Usage: %s [FRACTAL]\n\n"
-		"Fractal options are: Mandelbrot, Julia\n", fractol);
+	printf("Usage: %s FRACTAL [FRACTAL_OPTIONS]\n\n"
+		"Fractal options are: Mandelbrot, Julia\n\n"
+		"Some fractals require options to work:\n"
+		"\tJulia\tReceives a complex number in the following form: 0.0+0.0i",
+		fractol);
 }
 
 void	set_defaults(t_fractol *fractol)
 {
 	fractol->fractal = NULL;
+	fractol->mlx = NULL;
+	fractol->window = NULL;
 	fractol->width = 840;
 	fractol->height = 640;
+	fractol->c = assign(0, 0);
+	fractol->z = assign(0, 0);
 }
