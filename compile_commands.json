@@ -8,6 +8,598 @@
       "-I./includes",
       "-c",
       "-o",
+      "build/ft_memset.o",
+      "src/ft_memset.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_memset.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_memset.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_bzero.o",
+      "src/ft_bzero.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_bzero.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_bzero.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_memcpy.o",
+      "src/ft_memcpy.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_memcpy.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_memcpy.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_memccpy.o",
+      "src/ft_memccpy.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_memccpy.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_memccpy.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_memmove.o",
+      "src/ft_memmove.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_memmove.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_memmove.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_memchr.o",
+      "src/ft_memchr.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_memchr.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_memchr.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_memcmp.o",
+      "src/ft_memcmp.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_memcmp.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_memcmp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_strlen.o",
+      "src/ft_strlen.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_strlen.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_strlen.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_strlcpy.o",
+      "src/ft_strlcpy.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_strlcpy.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_strlcpy.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_strlcat.o",
+      "src/ft_strlcat.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_strlcat.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_strlcat.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_strchr.o",
+      "src/ft_strchr.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_strchr.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_strchr.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_strrchr.o",
+      "src/ft_strrchr.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_strrchr.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_strrchr.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_strnstr.o",
+      "src/ft_strnstr.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_strnstr.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_strnstr.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_strncmp.o",
+      "src/ft_strncmp.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_strncmp.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_strncmp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_atoi.o",
+      "src/ft_atoi.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_atoi.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_atoi.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_isalpha.o",
+      "src/ft_isalpha.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_isalpha.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_isalpha.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_isdigit.o",
+      "src/ft_isdigit.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_isdigit.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_isdigit.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_isalnum.o",
+      "src/ft_isalnum.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_isalnum.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_isalnum.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_isascii.o",
+      "src/ft_isascii.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_isascii.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_isascii.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_isprint.o",
+      "src/ft_isprint.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_isprint.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_isprint.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_toupper.o",
+      "src/ft_toupper.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_toupper.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_toupper.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_tolower.o",
+      "src/ft_tolower.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_tolower.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_tolower.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_calloc.o",
+      "src/ft_calloc.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_calloc.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_calloc.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_strdup.o",
+      "src/ft_strdup.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_strdup.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_strdup.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_substr.o",
+      "src/ft_substr.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_substr.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_substr.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_strjoin.o",
+      "src/ft_strjoin.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_strjoin.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_strjoin.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_strtrim.o",
+      "src/ft_strtrim.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_strtrim.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_strtrim.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_split.o",
+      "src/ft_split.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_split.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_split.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_itoa.o",
+      "src/ft_itoa.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_itoa.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_itoa.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_strmapi.o",
+      "src/ft_strmapi.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_strmapi.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_strmapi.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_putchar_fd.o",
+      "src/ft_putchar_fd.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_putchar_fd.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_putchar_fd.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_putstr_fd.o",
+      "src/ft_putstr_fd.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_putstr_fd.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_putstr_fd.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_putendl_fd.o",
+      "src/ft_putendl_fd.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_putendl_fd.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_putendl_fd.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_putnbr_fd.o",
+      "src/ft_putnbr_fd.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_putnbr_fd.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_putnbr_fd.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_lstnew.o",
+      "src/ft_lstnew.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_lstnew.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_lstnew.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_lstadd_front.o",
+      "src/ft_lstadd_front.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_lstadd_front.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_lstadd_front.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_lstsize.o",
+      "src/ft_lstsize.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_lstsize.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_lstsize.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
       "build/ft_lstlast.o",
       "src/ft_lstlast.c"
     ],
@@ -416,11 +1008,11 @@
       "-I./mlx",
       "-c",
       "-o",
-      "build/complex.o",
-      "src/complex.c"
+      "build/argparse.o",
+      "src/argparse.c"
     ],
     "directory": "/home/vinicius/Code/42/fractol",
-    "file": "/home/vinicius/Code/42/fractol/src/complex.c",
-    "output": "/home/vinicius/Code/42/fractol/build/complex.o"
+    "file": "/home/vinicius/Code/42/fractol/src/argparse.c",
+    "output": "/home/vinicius/Code/42/fractol/build/argparse.o"
   }
 ]
