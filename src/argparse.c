@@ -12,14 +12,38 @@
 
 #include "fractol.h"
 
-static int	set_fractal(char *arg, t_fractol *fractol)
+static int	get_julia_options(char *opt, t_fractol *fractol)
 {
-	if (!ft_strncmp(arg, "Mandelbrot", 9))
-		fractol->fractal = mandelbrot;
-	else if (!ft_strncmp(arg, "Julia", 5))
-		fractol->fractal = julia;
-	else
+	char	*ptr;
+
+	if (!ft_isdigit(*opt))
 		return (1);
+	ptr = ft_strchr(opt, '+');
+	if (ptr == NULL || !ft_isdigit(*(ptr + 1)))
+		return (1);
+	ptr = opt + ft_strlen(opt);
+	if (*(ptr - 1) != 'i')
+		return (1);
+	fractol->c.real = ft_atold(opt);
+	fractol->c.complex = ft_atold(ptr + 1);
+	return (0);
+}
+
+static int	set_fractal(int *i, int argc, char **argv, t_fractol *fractol)
+{
+	if (fractol->fractal != NULL)
+		return (1);
+	if (!ft_strncmp(argv[*i], "Mandelbrot", 9))
+		fractol->fractal = mandelbrot;
+	else if (!ft_strncmp(argv[*i], "Julia", 5))
+	{
+		*i += 1;
+		if (*i == argc)
+			raise(NO_FRACTAL_OPTIONS, NULL, argv[0]);
+		fractol->fractal = julia;
+		if (get_julia_options(argv[*i], fractol))
+			raise(INVALID_FRACTAL_OPTIONS, argv[*i], argv[0]);
+	}
 	return (0);
 }
 
@@ -28,7 +52,7 @@ void	argparse(int argc, char **argv, t_fractol *fractol)
 	int		i;
 
 	if (argc == 1)
-		arg_error(argv[0], NULL, NO_ARG);
+		raise(NO_ARG, NULL, argv[0]);
 	i = 0;
 	while (++i < argc)
 	{
@@ -39,10 +63,10 @@ void	argparse(int argc, char **argv, t_fractol *fractol)
 		}
 		else
 		{
-			if (fractol->fractal != NULL && set_fractal(argv[i], fractol))
+			if (set_fractal(&i, argc, argv, fractol))
 				break ;
 		}
 	}
 	if (i < argc)
-		arg_error(argv[0], argv[i], UNKNOWN_ARG);
+		raise(UNKNOWN_ARG, argv[i], argv[0]);
 }
