@@ -8,7 +8,8 @@ INCLUDES := $(addprefix -I,$(INCLUDESDIR))
 SRCDIR =./src
 OBJDIR =./build
 
-SRCS = fractol.c argparse.c complex.c mandelbrot.c utils.c error.c
+SRCS = fractol.c argparse.c complex.c mandelbrot.c \
+	   julia.c utils.c error.c init.c keys.c
 OBJS := $(addprefix $(OBJDIR)/,$(SRCS:.c=.o))
 SRCS := $(addprefix $(SRCDIR),$(SRCS))
 
