@@ -15,7 +15,14 @@
 
 enum e_keys
 {
-	ESC_KEY = 65307,
+	ESC_KEY	= 65307,
+	Q_KEY	= 113,
+};
+
+enum e_mouse_keys
+{
+	MWHEEL_UP	= 4,
+	MWHEEL_DOWN	= 5,
 };
 
 #endif
