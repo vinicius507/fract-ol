@@ -37,14 +37,25 @@ typedef struct s_fractol
 	int			(*fractal)();
 }	t_fractol;
 
+/* Prints help message on the cli. */
 void	print_help(const char *fractol);
 
+/* Parses arguments passed to the program. */
 void	argparse(int argc, char **argv, t_fractol *fractol);
 
+/* Iterates a complex number to check if it is part of the Mandelbrot Set */
 int		mandelbrot(t_fractol *fractol);
 
+/* Iterates a complex number to check if it is part of the Julia Set */
 int		julia(t_fractol *fractol);
 
+/* Sets default values for `t_fractol`. */
 void	set_defaults(t_fractol *fractol);
+
+/* Initializes `fractol` */
+void	init(t_fractol *fractol);
+
+/* Registers fractol keys */
+void	register_keys(t_fractol *fractol);
 
 #endif

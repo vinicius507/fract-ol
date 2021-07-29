@@ -11,3 +11,14 @@
 /* ************************************************************************** */
 
 #include "fractol.h"
+
+void	init(t_fractol *fractol)
+{
+	fractol->mlx = mlx_init();
+	fractol->window = mlx_new_window(fractol->mlx,
+			fractol->width,
+			fractol->height,
+			"Fractol");
+	register_keys(fractol);
+	mlx_loop(fractol->mlx);
+}
