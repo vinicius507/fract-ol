@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-static int	get_rgb(int r, int b, int g, int m)
+static int	get_rgb(int r, int g, int b, int m)
 {
 	int	r_temp;
 	int	g_temp;
@@ -21,7 +21,7 @@ static int	get_rgb(int r, int b, int g, int m)
 	r_temp = r * m;
 	g_temp = g * m;
 	b_temp = b * m;
-	return (r << 16 | g << 8 | b);
+	return (r_temp << 16 | g_temp << 8 | b_temp);
 }
 
 static int	hsl2rgb(int h, int s, int l)
