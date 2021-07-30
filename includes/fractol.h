@@ -22,15 +22,14 @@
 
 # define MAX_ITER 80
 
-/* Fractol Data Structure. The `width` and the `height` refer to the `window`
- * geometry. `z` and `c` are `t_complex` numbers for generating the fractals,
- * in which `c` refers to the current coordinate being evaluated. `radius` refer
- * to the interval shown in each axis. `data` refers to the pixelmap. */
+/* Fractol Data Structure. `w_size` refers to the  width and height of
+ * `window`. `z` and `c` are `t_complex` numbers for generating the fractals,
+ * in which `c` refers to the current coordinate being evaluated. `radius`
+ * refer to the interval shown in each axis. `data` refers to the pixelmap. */
 typedef struct s_fractol
 {
 	char		*fractol;
-	int			width;
-	int			height;
+	int			w_size;
 	void		*mlx;
 	void		*window;
 	t_complex	z;
@@ -76,5 +75,8 @@ void	kill(t_fractol *fractol, int code);
 
 /* Raises an `t_error` and terminates the program */
 void	raise(t_error code, const char *argument, t_fractol *fractol);
+
+/* Gets the color for the number of iterations */
+int		get_color(int iteration);
 
 #endif
