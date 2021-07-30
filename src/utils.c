@@ -31,6 +31,7 @@ void	set_defaults(t_fractol *fractol)
 	fractol->height = 640;
 	fractol->c = assign(0, 0);
 	fractol->z = assign(0, 0);
+	fractol->data = ft_calloc(fractol->width * fractol->height, sizeof(int));
 }
 
 void	kill(t_fractol *fractol, int code)
