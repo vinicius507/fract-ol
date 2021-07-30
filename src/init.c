@@ -16,9 +16,10 @@ void	init(t_fractol *fractol)
 {
 	fractol->mlx = mlx_init();
 	fractol->window = mlx_new_window(fractol->mlx,
-			fractol->width,
-			fractol->height,
+			fractol->w_size,
+			fractol->w_size,
 			"Fractol");
 	register_keys(fractol);
+	display_fractal(fractol, 2.0L);
 	mlx_loop(fractol->mlx);
 }
