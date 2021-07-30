@@ -20,10 +20,11 @@ int	mandelbrot(t_fractol *fractol)
 
 	z = assign(0, 0);
 	i = 0;
-	while (abs_squared(z) <= 4.0 && i++ < MAX_ITER)
+	while (abs_squared(z) <= 4.0 && i < MAX_ITER)
 	{
 		z = multiply(z, z);
 		z = add(z, fractol->c);
+		i++;
 	}
 	return (i);
 }

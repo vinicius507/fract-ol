@@ -79,4 +79,7 @@ void	raise(t_error code, const char *argument, t_fractol *fractol);
 /* Gets the color for the number of iterations */
 int		get_color(int iteration);
 
+/* Displays the fractal */
+int		display_fractal(t_fractol *fractol, long double radius);
+
 #endif
