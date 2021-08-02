@@ -41,6 +41,6 @@ void	init(t_fractol *fractol)
 		kill(fractol, MLX_WINDOW_ERROR);
 	init_image(fractol);
 	register_keys(fractol);
-	display_fractal(fractol, 2.0L);
+	display_fractal(fractol);
 	mlx_loop(fractol->mlx);
 }

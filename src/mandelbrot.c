@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "fractol.h"
-#include <stdio.h>
+#include <math.h>
 
 int	mandelbrot(t_fractol *fractol)
 {
