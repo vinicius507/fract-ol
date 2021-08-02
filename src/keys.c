@@ -13,11 +13,8 @@
 #include "fractol.h"
 #include "fractol_keys.h"
 
-int	keys(int key, void *f_ptr)
+int	keys(int key, t_fractol *fractol)
 {
-	t_fractol	*fractol;
-
-	fractol = (t_fractol *)f_ptr;
 	if (key == ESC_KEY || key == Q_KEY)
 	{
 		mlx_destroy_window(fractol->mlx, fractol->window);
@@ -28,17 +25,25 @@ int	keys(int key, void *f_ptr)
 	return (0);
 }
 
-int	mouse_keys(int key, void *f_ptr)
+int	mouse_keys(int key, unsigned int px, unsigned int py, t_fractol *fractol)
 {
-	t_fractol	*fractol;
-
-	fractol = (t_fractol *)f_ptr;
-	printf("Mouse Key Value: %d\n", key);
+	if (key == MWHEEL_UP)
+	{
+		fractol->radius *= 1 - ZOOM_STEP;
+		display_fractal(fractol);
+	}
+	else if (key == MWHEEL_DOWN)
+	{
+		fractol->radius *= 1 + ZOOM_STEP;
+		display_fractal(fractol);
+	}
+	else
+		printf("%d %d\n", px, py);
 	return (0);
 }
 
 void	register_keys(t_fractol *fractol)
 {
-	mlx_key_hook(fractol->window, keys, (void *)fractol);
-	mlx_mouse_hook(fractol->window, mouse_keys, (void *)fractol);
+	mlx_key_hook(fractol->window, keys, fractol);
+	mlx_mouse_hook(fractol->window, mouse_keys, fractol);
 }

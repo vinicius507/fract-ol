@@ -15,14 +15,17 @@
 int	julia(t_fractol *fractol)
 {
 	t_complex	c;
+	t_complex	z;
 	int			i;
 
+	z = fractol->z;
 	c = fractol->c;
 	i = 0;
-	while (abs_squared(c) <= 4.0 && i++ < MAX_ITER)
+	while (abs_squared(c) <= 4.0 && i < MAX_ITER)
 	{
 		c = multiply(c, c);
-		c = add(c, fractol->z);
+		c = add(c, z);
+		i++;
 	}
 	return (i);
 }

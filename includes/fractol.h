@@ -18,10 +18,10 @@
 
 # include "libft.h"
 # include "ft_complex.h"
-# include "math.h"
 # include "mlx.h"
 
 # define MAX_ITER 80
+# define ZOOM_STEP 0.05L
 
 typedef struct s_image
 {
@@ -45,7 +45,6 @@ typedef struct s_fractol
 	t_complex	z;
 	t_complex	c;
 	long double	radius;
-	long double	offset;
 	int			*data;
 	t_image		*image;
 	int			(*fractal)();
@@ -95,6 +94,6 @@ void	raise(t_error code, const char *argument, t_fractol *fractol);
 int		get_color(int iteration);
 
 /* Displays the fractal */
-int		display_fractal(t_fractol *fractol, long double radius);
+int		display_fractal(t_fractol *fractol);
 
 #endif
