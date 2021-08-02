@@ -27,15 +27,19 @@ void	set_defaults(t_fractol *fractol)
 	fractol->fractal = NULL;
 	fractol->mlx = NULL;
 	fractol->window = NULL;
+	fractol->image = NULL;
 	fractol->w_size = 800;
 	fractol->c = assign(0, 0);
 	fractol->z = assign(0, 0);
-	fractol->data = ft_calloc(fractol->w_size * fractol->w_size, sizeof(int));
 }
 
 void	kill(t_fractol *fractol, int code)
 {
-	if (fractol->data)
-		free(fractol->data);
+	if (fractol->image)
+	{
+		if (fractol->image->image)
+			mlx_destroy_image(fractol->mlx, fractol->image->image);
+		free(fractol->image);
+	}
 	exit(code);
 }

@@ -24,22 +24,27 @@ static t_complex	translate(int x, int y, long double r, t_fractol *fractol)
 	return (assign(tx, ty));
 }
 
+// OPTIM: make it with a single loop
 static int	create_pixelmap(t_fractol *fractol, long double radius)
 {
 	int	i;
+	int	j;
 	int	color;
-	int	area;
+	int	*data;
 
 	i = 0;
-	area = fractol->w_size * fractol->w_size;
-	while (i < area)
+	while (i <= fractol->w_size)
 	{
-		fractol->c = translate(i % fractol->w_size,
-				i / fractol->w_size,
-				radius,
-				fractol);
-		color = get_color(fractol->fractal(fractol));
-		fractol->data[i] = color;
+		data = (int *)(fractol->image->data + (fractol->image->size_line * i));
+		j = 0;
+		while (j < fractol->w_size)
+		{
+			fractol->c = translate(j, i, radius, fractol);
+			color = mlx_get_color_value(fractol->mlx,
+					get_color(fractol->fractal(fractol)));
+			data[j] = color;
+			j++;
+		}
 		i++;
 	}
 	return (0);
@@ -47,16 +52,10 @@ static int	create_pixelmap(t_fractol *fractol, long double radius)
 
 int	display_fractal(t_fractol *fractol, long double radius)
 {
-	int	i;
-	int	area;
-
 	create_pixelmap(fractol, radius);
-	i = -1;
-	area = fractol->w_size * fractol->w_size;
-	while (++i < area)
-		mlx_pixel_put(fractol->mlx,
-			fractol->window, i % fractol->w_size,
-			i / fractol->w_size,
-			fractol->data[i]);
+	mlx_put_image_to_window(fractol->mlx,
+		fractol->window,
+		fractol->image->image,
+		0, 0);
 	return (0);
 }

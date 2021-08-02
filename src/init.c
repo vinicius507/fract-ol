@@ -12,13 +12,34 @@
 
 #include "fractol.h"
 
+static void	init_image(t_fractol *fractol)
+{
+	fractol->image = ft_calloc(1, sizeof(t_image));
+	fractol->image->image = mlx_new_image(fractol->mlx,
+			fractol->w_size,
+			fractol->w_size);
+	if (fractol->image->image == NULL)
+		kill(fractol, MLX_IMAGE_ERROR);
+	fractol->image->data = mlx_get_data_addr(fractol->image->image,
+			&(fractol->image->bits_per_pixel),
+			&(fractol->image->size_line),
+			&(fractol->image->endian));
+	if (fractol->image->data == NULL)
+		kill(fractol, MLX_IMAGE_ERROR);
+}
+
 void	init(t_fractol *fractol)
 {
 	fractol->mlx = mlx_init();
+	if (fractol->mlx == NULL)
+		kill(fractol, MLX_INIT_ERROR);
 	fractol->window = mlx_new_window(fractol->mlx,
 			fractol->w_size,
 			fractol->w_size,
 			"Fractol");
+	if (fractol->window == NULL)
+		kill(fractol, MLX_WINDOW_ERROR);
+	init_image(fractol);
 	register_keys(fractol);
 	display_fractal(fractol, 2.0L);
 	mlx_loop(fractol->mlx);

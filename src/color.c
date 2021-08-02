@@ -18,22 +18,22 @@ static int	get_rgb(int r, int g, int b, int m)
 	int	g_temp;
 	int	b_temp;
 
-	r_temp = r * m;
-	g_temp = g * m;
-	b_temp = b * m;
+	r_temp = ((r + m) * 0xff);
+	g_temp = ((g + m) * 0xff);
+	b_temp = ((b + m) * 0xff);
 	return (r_temp << 16 | g_temp << 8 | b_temp);
 }
 
-static int	hsl2rgb(int h, int s, int l)
+static int	hsv2rgb(int h, int s, int v)
 {
 	int	c;
 	int	x;
 	int	m;
 	int	rgb;
 
-	c = 1 - abs((2 * l) - 1) * s;
+	c = v * s;
 	x = c * (1 - abs(((h / 60) % 2) - 1));
-	m = l - (c / 2);
+	m = v - c;
 	if (0 <= h && h < 60)
 		rgb = get_rgb(c, x, 0, m);
 	else if (60 <= h && h < 120)
@@ -49,19 +49,20 @@ static int	hsl2rgb(int h, int s, int l)
 	return (rgb);
 }
 
+// TODO: change how to display colors
 int	get_color(int iteration)
 {
 	int	h;
 	int	s;
-	int	l;
+	int	v;
 	int	argb;
 
 	h = iteration * 360 / MAX_ITER;
-	s = 100;
+	s = 1;
 	if (iteration == MAX_ITER)
-		l = 0;
+		v = 0;
 	else
-		l = 100;
-	argb = 0xff << 24 | hsl2rgb(h, s, l);
+		v = 1;
+	argb = hsv2rgb(h, s, v) | (0xff << 24);
 	return (argb);
 }
