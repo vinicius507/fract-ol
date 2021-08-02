@@ -18,9 +18,19 @@
 
 # include "libft.h"
 # include "ft_complex.h"
+# include "math.h"
 # include "mlx.h"
 
 # define MAX_ITER 80
+
+typedef struct s_image
+{
+	void	*image;
+	char	*data;
+	int		bits_per_pixel;
+	int		size_line;
+	int		endian;
+}	t_image;
 
 /* Fractol Data Structure. `w_size` refers to the  width and height of
  * `window`. `z` and `c` are `t_complex` numbers for generating the fractals,
@@ -35,7 +45,9 @@ typedef struct s_fractol
 	t_complex	z;
 	t_complex	c;
 	long double	radius;
+	long double	offset;
 	int			*data;
+	t_image		*image;
 	int			(*fractal)();
 }	t_fractol;
 
@@ -47,6 +59,9 @@ typedef enum e_error
 	NO_FRACTAL_OPTIONS = 1<<2,
 	INVALID_FRACTAL_OPTIONS = 1<<3,
 	SYS_ERROR = 1<<4,
+	MLX_INIT_ERROR = 1<<5,
+	MLX_WINDOW_ERROR = 1<<6,
+	MLX_IMAGE_ERROR = 1<<7,
 }	t_error;
 
 /* Prints help message on the cli. */
