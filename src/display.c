@@ -12,6 +12,7 @@
 
 #include "fractol.h"
 
+// TODO: implement zoom
 static t_complex	translate(int x, int y, t_fractol *fractol)
 {
 	long double	tx;

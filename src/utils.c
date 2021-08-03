@@ -28,10 +28,12 @@ void	set_defaults(t_fractol *fractol)
 	fractol->mlx = NULL;
 	fractol->window = NULL;
 	fractol->image = NULL;
-	fractol->w_size = 200;
+	fractol->w_size = 800;
 	fractol->c = assign(0, 0);
 	fractol->z = assign(0, 0);
 	fractol->radius = 2.0L;
+	fractol->mouse_x = 0.0L;
+	fractol->mouse_y = 0.0L;
 }
 
 void	kill(t_fractol *fractol, int code)
