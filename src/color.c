@@ -12,52 +12,17 @@
 
 #include "fractol.h"
 
-/* static int	get_rgb(int r, int g, int b, int m) */
-/* { */
-/* 	int	r_temp; */
-/* 	int	g_temp; */
-/* 	int	b_temp; */
-
-/* 	r_temp = ((r + m) * 0xff); */
-/* 	g_temp = ((g + m) * 0xff); */
-/* 	b_temp = ((b + m) * 0xff); */
-/* 	return (r_temp << 16 | g_temp << 8 | b_temp); */
-/* } */
-
-/* static int	hsv2rgb(int h, int s, int v) */
-/* { */
-/* 	int	c; */
-/* 	int	x; */
-/* 	int	m; */
-/* 	int	rgb; */
-
-/* 	c = v * s; */
-/* 	x = c * (1 - abs(((h / 60) % 2) - 1)); */
-/* 	m = v - c; */
-/* 	if (0 <= h && h < 60) */
-/* 		rgb = get_rgb(c, x, 0, m); */
-/* 	else if (60 <= h && h < 120) */
-/* 		rgb = get_rgb(x, c, 0, m); */
-/* 	else if (120 <= h && h < 180) */
-/* 		rgb = get_rgb(0, c, x, m); */
-/* 	else if (180 <= h && h < 240) */
-/* 		rgb = get_rgb(0, x, c, m); */
-/* 	else if (240 <= h && h < 300) */
-/* 		rgb = get_rgb(x, 0, c, m); */
-/* 	else */
-/* 		rgb = get_rgb(c, 0, x, m); */
-/* 	return (rgb); */
-/* } */
-
-// TODO: change how to display colors
 int	get_color(int iteration)
 {
-	int	argb;
-	int	factor;
+	int		argb;
+	double	factor;
 
 	if (iteration == MAX_ITER)
 		return (0xff000000);
-	factor = iteration / MAX_ITER;
+	factor = (double)iteration / MAX_ITER;
 	argb = 0xff << 24;
+	argb |= (int)(9 * pow((1 - factor), 3) * factor * 255);
+	argb |= (int)(6 * (1 - factor) * (int)pow(factor, 2) * 255) << 8;
+	argb |= (int)(0.5 * pow((2 - factor), 3) * factor * 255) << 16;
 	return (argb);
 }
