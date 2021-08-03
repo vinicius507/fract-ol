@@ -15,13 +15,14 @@
 // TODO: implement zoom
 static t_complex	translate(int x, int y, t_fractol *fractol)
 {
-	long double	tx;
-	long double	ty;
-	long double	factor;
+	long double			tx;
+	long double			ty;
+	static long double	old_scale;
 
-	factor = (2 * fractol->radius) / fractol->w_size;
-	tx = (x * factor) - fractol->radius;
-	ty = (y * factor) - fractol->radius;
+	if (!old_scale)
+		old_scale = 1.0L;
+	tx = (x * fractol->factor) - fractol->viewport + fractol->offset_x;
+	ty = (y * fractol->factor) - fractol->viewport + fractol->offset_y;
 	return (assign(tx, ty));
 }
 

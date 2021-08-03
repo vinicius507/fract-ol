@@ -22,6 +22,7 @@
 
 # define MAX_ITER 80
 # define ZOOM_STEP 0.05L
+# define DEFAULT_RADIUS 2.0L
 
 typedef struct s_image
 {
@@ -45,8 +46,11 @@ typedef struct s_fractol
 	t_complex	z;
 	t_complex	c;
 	long double	radius;
-	long double	mouse_x;
-	long double	mouse_y;
+	long double	scale;
+	long double	viewport;
+	long double	offset_x;
+	long double	factor;
+	long double	offset_y;
 	int			*data;
 	t_image		*image;
 	int			(*fractal)();
@@ -97,5 +101,8 @@ int		get_color(int iteration);
 
 /* Displays the fractal */
 int		display_fractal(t_fractol *fractol);
+
+/* Handles the computation of zoom parameters */
+void	zoom(int z, t_fractol *fractol);
 
 #endif

@@ -10,7 +10,7 @@ OBJDIR =./build
 
 SRCS = fractol.c argparse.c complex.c mandelbrot.c \
 	   julia.c utils.c error.c init.c keys.c color.c \
-	   display.c
+	   display.c zoom.c
 OBJS := $(addprefix $(OBJDIR)/,$(SRCS:.c=.o))
 SRCS := $(addprefix $(SRCDIR),$(SRCS))
 
