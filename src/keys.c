@@ -30,11 +30,15 @@ int	mouse_keys(int key, unsigned int px, unsigned int py, t_fractol *fractol)
 	if (key == MWHEEL_UP)
 	{
 		fractol->radius *= 1 - ZOOM_STEP;
+		fractol->mouse_x = px;
+		fractol->mouse_y = py;
 		display_fractal(fractol);
 	}
 	else if (key == MWHEEL_DOWN)
 	{
 		fractol->radius *= 1 + ZOOM_STEP;
+		fractol->mouse_x = px;
+		fractol->mouse_y = py;
 		display_fractal(fractol);
 	}
 	else

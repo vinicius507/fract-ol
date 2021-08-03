@@ -15,7 +15,7 @@
 
 # include <stdio.h>
 # include <stdlib.h>
-
+# include <math.h>
 # include "libft.h"
 # include "ft_complex.h"
 # include "mlx.h"
@@ -45,6 +45,8 @@ typedef struct s_fractol
 	t_complex	z;
 	t_complex	c;
 	long double	radius;
+	long double	mouse_x;
+	long double	mouse_y;
 	int			*data;
 	t_image		*image;
 	int			(*fractal)();
