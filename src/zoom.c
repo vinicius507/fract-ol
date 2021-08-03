@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol_keys.h                                     :+:      :+:    :+:   */
+/*   zoom.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/23 17:54:23 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/07/23 17:54:23 by vgoncalv         ###   ########.fr       */
+/*   Created: 2021/08/03 15:44:29 by vgoncalv          #+#    #+#             */
+/*   Updated: 2021/08/03 15:44:29 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_KEYS_H
-# define FRACTOL_KEYS_H
+#include "fractol.h"
 
-enum e_keys
+void	zoom(int z, t_fractol *fractol)
 {
-	ESC_KEY	= 65307,
-	Q_KEY	= 113,
-	R_KEY	= 114,
-};
-
-enum e_mouse_keys
-{
-	MWHEEL_UP	= 4,
-	MWHEEL_DOWN	= 5,
-};
-
-#endif
+	if (z > 0)
+		fractol->scale -= ZOOM_STEP;
+	else if (z < 0)
+		fractol->scale += ZOOM_STEP;
+	else
+		fractol->scale = 1.0L;
+	fractol->viewport = fractol->radius * fractol->scale;
+	fractol->factor = (2 * fractol->viewport) / fractol->w_size;
+}

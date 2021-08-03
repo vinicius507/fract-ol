@@ -20,6 +20,13 @@ int	keys(int key, t_fractol *fractol)
 		mlx_destroy_window(fractol->mlx, fractol->window);
 		kill(fractol, 0);
 	}
+	else if (key == R_KEY)
+	{
+		zoom(0, fractol);
+		fractol->offset_x = 0;
+		fractol->offset_y = 0;
+		display_fractal(fractol);
+	}
 	else
 		printf("Key Value: %d\n", key);
 	return (0);
@@ -29,16 +36,12 @@ int	mouse_keys(int key, unsigned int px, unsigned int py, t_fractol *fractol)
 {
 	if (key == MWHEEL_UP)
 	{
-		fractol->radius *= 1 - ZOOM_STEP;
-		fractol->mouse_x = px;
-		fractol->mouse_y = py;
+		zoom(1, fractol);
 		display_fractal(fractol);
 	}
 	else if (key == MWHEEL_DOWN)
 	{
-		fractol->radius *= 1 + ZOOM_STEP;
-		fractol->mouse_x = px;
-		fractol->mouse_y = py;
+		zoom(-1, fractol);
 		display_fractal(fractol);
 	}
 	else
