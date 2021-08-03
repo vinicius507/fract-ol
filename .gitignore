@@ -1,2 +1,5 @@
 build/*
 fractol
+.cache/*
+gmon.out
+prof_output
