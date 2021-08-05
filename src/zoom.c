@@ -15,9 +15,9 @@
 void	zoom(int z, t_fractol *fractol)
 {
 	if (z > 0)
-		fractol->scale -= ZOOM_STEP;
+		fractol->scale *= (1 - ZOOM_STEP);
 	else if (z < 0)
-		fractol->scale += ZOOM_STEP;
+		fractol->scale *= (1 + ZOOM_STEP);
 	else
 		fractol->scale = 1.0L;
 	fractol->viewport = fractol->radius * fractol->scale;
