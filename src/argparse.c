@@ -31,11 +31,9 @@ static int	get_julia_options(char *opt, t_fractol *fractol)
 
 static int	set_fractal(int *i, int argc, char **argv, t_fractol *fractol)
 {
-	if (fractol->fractal != NULL)
-		return (1);
-	if (!ft_strncmp(argv[*i], "Mandelbrot", 9))
+	if (fractol->fractal == NULL && !ft_strncmp(argv[*i], "Mandelbrot", 9))
 		fractol->fractal = mandelbrot;
-	else if (!ft_strncmp(argv[*i], "Julia", 5))
+	else if (fractol->fractal == NULL && !ft_strncmp(argv[*i], "Julia", 5))
 	{
 		*i += 1;
 		if (*i == argc)
@@ -44,6 +42,8 @@ static int	set_fractal(int *i, int argc, char **argv, t_fractol *fractol)
 		if (get_julia_options(argv[*i], fractol))
 			raise(INVALID_FRACTAL_OPTIONS, argv[*i], fractol);
 	}
+	if (fractol->fractal == NULL)
+		return (1);
 	return (0);
 }
 
