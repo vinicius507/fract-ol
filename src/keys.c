@@ -37,6 +37,8 @@ int	mouse_keys(int key, unsigned int px, unsigned int py, t_fractol *fractol)
 		zoom(1, fractol, px, py);
 	else if (key == MWHEEL_DOWN)
 		zoom(-1, fractol, px, py);
+	else if (key == MLEFT && fractol->fractal == julia)
+		fractol->z = translate(px, py, fractol);
 	display_fractal(fractol);
 	return (0);
 }

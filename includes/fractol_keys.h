@@ -30,6 +30,7 @@ enum e_keys
 
 enum e_mouse_keys
 {
+	MLEFT		= 1,
 	MWHEEL_UP	= 4,
 	MWHEEL_DOWN	= 5,
 };
