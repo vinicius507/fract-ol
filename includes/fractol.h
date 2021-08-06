@@ -22,7 +22,7 @@
 
 # define MAX_ITER 80
 # define ZOOM_STEP 0.05L
-# define DEFAULT_RADIUS 2.0L
+# define AXIS_RANGE 2.0L
 
 typedef struct s_image
 {
@@ -40,16 +40,15 @@ typedef struct s_image
 typedef struct s_fractol
 {
 	char		*fractol;
-	int			w_size;
+	int			width;
+	int			height;
 	void		*mlx;
 	void		*window;
 	t_complex	z;
 	t_complex	c;
-	long double	radius;
-	long double	scale;
-	long double	viewport;
+	long double	factor_x;
+	long double	factor_y;
 	long double	offset_x;
-	long double	factor;
 	long double	offset_y;
 	int			*data;
 	t_image		*image;
