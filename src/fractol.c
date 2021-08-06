@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "fractol.h"
-#include "ft_complex.h"
 
 int	main(int argc, char **argv)
 {
