@@ -983,6 +983,24 @@
       "-Wall",
       "-Wextra",
       "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_atold.o",
+      "src/ft_atold.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_atold.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_atold.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-O3",
+      "-pg",
       "-c",
       "-I./includes",
       "-I./libft/includes",
@@ -1002,6 +1020,8 @@
       "-Wall",
       "-Wextra",
       "-Werror",
+      "-O3",
+      "-pg",
       "-c",
       "-I./includes",
       "-I./libft/includes",
@@ -1014,5 +1034,257 @@
     "directory": "/home/vinicius/Code/42/fractol",
     "file": "/home/vinicius/Code/42/fractol/src/argparse.c",
     "output": "/home/vinicius/Code/42/fractol/build/argparse.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-O3",
+      "-pg",
+      "-c",
+      "-I./includes",
+      "-I./libft/includes",
+      "-I./mlx",
+      "-c",
+      "-o",
+      "build/complex.o",
+      "src/complex.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol",
+    "file": "/home/vinicius/Code/42/fractol/src/complex.c",
+    "output": "/home/vinicius/Code/42/fractol/build/complex.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-O3",
+      "-pg",
+      "-c",
+      "-I./includes",
+      "-I./libft/includes",
+      "-I./mlx",
+      "-c",
+      "-o",
+      "build/mandelbrot.o",
+      "src/mandelbrot.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol",
+    "file": "/home/vinicius/Code/42/fractol/src/mandelbrot.c",
+    "output": "/home/vinicius/Code/42/fractol/build/mandelbrot.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-O3",
+      "-pg",
+      "-c",
+      "-I./includes",
+      "-I./libft/includes",
+      "-I./mlx",
+      "-c",
+      "-o",
+      "build/julia.o",
+      "src/julia.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol",
+    "file": "/home/vinicius/Code/42/fractol/src/julia.c",
+    "output": "/home/vinicius/Code/42/fractol/build/julia.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-O3",
+      "-pg",
+      "-c",
+      "-I./includes",
+      "-I./libft/includes",
+      "-I./mlx",
+      "-c",
+      "-o",
+      "build/utils.o",
+      "src/utils.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol",
+    "file": "/home/vinicius/Code/42/fractol/src/utils.c",
+    "output": "/home/vinicius/Code/42/fractol/build/utils.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-O3",
+      "-pg",
+      "-c",
+      "-I./includes",
+      "-I./libft/includes",
+      "-I./mlx",
+      "-c",
+      "-o",
+      "build/error.o",
+      "src/error.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol",
+    "file": "/home/vinicius/Code/42/fractol/src/error.c",
+    "output": "/home/vinicius/Code/42/fractol/build/error.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-O3",
+      "-pg",
+      "-c",
+      "-I./includes",
+      "-I./libft/includes",
+      "-I./mlx",
+      "-c",
+      "-o",
+      "build/init.o",
+      "src/init.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol",
+    "file": "/home/vinicius/Code/42/fractol/src/init.c",
+    "output": "/home/vinicius/Code/42/fractol/build/init.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-O3",
+      "-pg",
+      "-c",
+      "-I./includes",
+      "-I./libft/includes",
+      "-I./mlx",
+      "-c",
+      "-o",
+      "build/keys.o",
+      "src/keys.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol",
+    "file": "/home/vinicius/Code/42/fractol/src/keys.c",
+    "output": "/home/vinicius/Code/42/fractol/build/keys.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-O3",
+      "-pg",
+      "-c",
+      "-I./includes",
+      "-I./libft/includes",
+      "-I./mlx",
+      "-c",
+      "-o",
+      "build/color.o",
+      "src/color.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol",
+    "file": "/home/vinicius/Code/42/fractol/src/color.c",
+    "output": "/home/vinicius/Code/42/fractol/build/color.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-O3",
+      "-pg",
+      "-c",
+      "-I./includes",
+      "-I./libft/includes",
+      "-I./mlx",
+      "-c",
+      "-o",
+      "build/display.o",
+      "src/display.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol",
+    "file": "/home/vinicius/Code/42/fractol/src/display.c",
+    "output": "/home/vinicius/Code/42/fractol/build/display.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-O3",
+      "-pg",
+      "-c",
+      "-I./includes",
+      "-I./libft/includes",
+      "-I./mlx",
+      "-c",
+      "-o",
+      "build/zoom.o",
+      "src/zoom.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol",
+    "file": "/home/vinicius/Code/42/fractol/src/zoom.c",
+    "output": "/home/vinicius/Code/42/fractol/build/zoom.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-O3",
+      "-pg",
+      "-c",
+      "-I./includes",
+      "-I./libft/includes",
+      "-I./mlx",
+      "-c",
+      "-o",
+      "build/translate.o",
+      "src/translate.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol",
+    "file": "/home/vinicius/Code/42/fractol/src/translate.c",
+    "output": "/home/vinicius/Code/42/fractol/build/translate.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-O3",
+      "-pg",
+      "-c",
+      "-I./includes",
+      "-I./libft/includes",
+      "-I./mlx",
+      "-c",
+      "-o",
+      "build/defaults.o",
+      "src/defaults.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol",
+    "file": "/home/vinicius/Code/42/fractol/src/defaults.c",
+    "output": "/home/vinicius/Code/42/fractol/build/defaults.o"
   }
 ]

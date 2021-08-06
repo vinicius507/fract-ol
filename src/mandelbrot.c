@@ -11,9 +11,7 @@
 /* ************************************************************************** */
 
 #include "fractol.h"
-#include <math.h>
 
-// HACK: need to optimize better
 int	mandelbrot(t_fractol *fractol)
 {
 	t_complex	z;
