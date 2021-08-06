@@ -15,9 +15,17 @@
 
 enum e_keys
 {
-	ESC_KEY	= 65307,
-	Q_KEY	= 113,
-	R_KEY	= 114,
+	ESC_KEY		= 65307,
+	Q_KEY		= 113,
+	R_KEY		= 114,
+	W_KEY		= 119,
+	A_KEY		= 97,
+	S_KEY		= 115,
+	D_KEY		= 100,
+	UP_KEY		= 65362,
+	DOWN_KEY	= 65364,
+	LEFT_KEY	= 65361,
+	RIGHT_KEY	= 65363,
 };
 
 enum e_mouse_keys
