@@ -13,6 +13,7 @@
 #include "fractol.h"
 #include <math.h>
 
+// HACK: need to optimize better
 int	mandelbrot(t_fractol *fractol)
 {
 	t_complex	z;
@@ -20,6 +21,9 @@ int	mandelbrot(t_fractol *fractol)
 	long double	i2;
 	int			i;
 
+	if (fractol->c.real >= -0.5L && fractol->c.real <= 0.2L
+		&& fractol->c.complex >= -0.4L && fractol->c.complex <= 0.4L)
+		return (MAX_ITER);
 	z = assign(0, 0);
 	r2 = 0;
 	i2 = 0;

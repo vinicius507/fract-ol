@@ -12,14 +12,16 @@
 
 #include "fractol.h"
 
-void	zoom(int z, t_fractol *fractol)
+void	zoom(int z, t_fractol *fractol, int mouse_x, int mouse_y)
 {
-	if (z > 0)
-		fractol->scale *= (1 - ZOOM_STEP);
-	else if (z < 0)
-		fractol->scale *= (1 + ZOOM_STEP);
-	else
-		fractol->scale = 1.0L;
-	fractol->viewport = fractol->radius * fractol->scale;
-	fractol->factor = (2 * fractol->viewport) / fractol->w_size;
+	long double	zoom;
+	t_complex	mouse;
+
+	zoom = exp(ZOOM_STEP * -z);
+	mouse = translate(mouse_x, mouse_y, fractol);
+	fractol->offset_x += fractol->factor_x * mouse_x
+		* (fractol->scale * zoom - fractol->scale);
+	fractol->offset_y += fractol->factor_y * mouse_y
+		* (fractol->scale * zoom - fractol->scale);
+	fractol->scale *= zoom;
 }

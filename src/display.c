@@ -12,17 +12,6 @@
 
 #include "fractol.h"
 
-// TODO: implement zoom
-static t_complex	translate(int x, int y, t_fractol *fractol)
-{
-	long double			tx;
-	long double			ty;
-
-	tx = (x * fractol->factor_x) - fractol->offset_x;
-	ty = (y * fractol->factor_y) - fractol->offset_y;
-	return (assign(tx, ty));
-}
-
 static int	create_pixelmap(t_fractol *fractol)
 {
 	int	i;
