@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <math.h>
+# include <X11/X.h>
 # include "libft.h"
 # include "ft_complex.h"
 # include "mlx.h"
