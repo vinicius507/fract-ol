@@ -29,8 +29,12 @@ void	kill(t_fractol *fractol, int code)
 			mlx_destroy_image(fractol->mlx, fractol->image->image);
 		free(fractol->image);
 	}
-	mlx_destroy_window(fractol->mlx, fractol->window);
-	mlx_destroy_display(fractol->mlx);
-	free(fractol->mlx);
+	if (fractol->window)
+		mlx_destroy_window(fractol->mlx, fractol->window);
+	if (fractol->mlx)
+	{
+		mlx_destroy_display(fractol->mlx);
+		free(fractol->mlx);
+	}
 	exit(code);
 }
