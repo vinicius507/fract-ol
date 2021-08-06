@@ -16,8 +16,8 @@ static void	init_image(t_fractol *fractol)
 {
 	fractol->image = ft_calloc(1, sizeof(t_image));
 	fractol->image->image = mlx_new_image(fractol->mlx,
-			fractol->w_size,
-			fractol->w_size);
+			fractol->width,
+			fractol->height);
 	if (fractol->image->image == NULL)
 		kill(fractol, MLX_IMAGE_ERROR);
 	fractol->image->data = mlx_get_data_addr(fractol->image->image,
@@ -34,8 +34,8 @@ void	init(t_fractol *fractol)
 	if (fractol->mlx == NULL)
 		kill(fractol, MLX_INIT_ERROR);
 	fractol->window = mlx_new_window(fractol->mlx,
-			fractol->w_size,
-			fractol->w_size,
+			fractol->width,
+			fractol->height,
 			"Fractol");
 	if (fractol->window == NULL)
 		kill(fractol, MLX_WINDOW_ERROR);

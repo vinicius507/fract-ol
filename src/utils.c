@@ -28,15 +28,24 @@ void	set_defaults(t_fractol *fractol)
 	fractol->mlx = NULL;
 	fractol->window = NULL;
 	fractol->image = NULL;
-	fractol->w_size = 800;
+	fractol->width = 1200;
+	fractol->height = 600;
+	if (fractol->width <= fractol->height)
+	{
+		fractol->offset_x = AXIS_RANGE;
+		fractol->offset_y = AXIS_RANGE * fractol->height / fractol->width;
+		fractol->factor_x = 2 * fractol->offset_x / fractol->width;
+		fractol->factor_y = 2 * fractol->offset_y / fractol->height;
+	}
+	else
+	{
+		fractol->offset_x = AXIS_RANGE * fractol->width / fractol->height;
+		fractol->offset_y = AXIS_RANGE;
+		fractol->factor_x = 2 * fractol->offset_x / fractol->width;
+		fractol->factor_y = 2 * fractol->offset_y / fractol->height;
+	}
 	fractol->c = assign(0, 0);
 	fractol->z = assign(0, 0);
-	fractol->radius = DEFAULT_RADIUS;
-	fractol->scale = 1.0L;
-	fractol->viewport = fractol->scale * fractol->radius;
-	fractol->factor = (2 * fractol->viewport) / fractol->w_size;
-	fractol->offset_x = 0.0L;
-	fractol->offset_y = 0.0L;
 }
 
 void	kill(t_fractol *fractol, int code)

@@ -17,12 +17,9 @@ static t_complex	translate(int x, int y, t_fractol *fractol)
 {
 	long double			tx;
 	long double			ty;
-	static long double	old_scale;
 
-	if (!old_scale)
-		old_scale = 1.0L;
-	tx = (x * fractol->factor) - fractol->viewport + fractol->offset_x;
-	ty = (y * fractol->factor) - fractol->viewport + fractol->offset_y;
+	tx = (x * fractol->factor_x) - fractol->offset_x;
+	ty = (y * fractol->factor_y) - fractol->offset_y;
 	return (assign(tx, ty));
 }
 
@@ -34,11 +31,11 @@ static int	create_pixelmap(t_fractol *fractol)
 	int	color;
 	int	*data;
 
-	i = fractol->w_size * fractol->w_size;
+	i = fractol->width * fractol->height;
 	while (i--)
 	{
-		x = i % fractol->w_size;
-		y = i / fractol->w_size;
+		x = i % fractol->width;
+		y = i / fractol->width;
 		data = (int *)(fractol->image->data
 				+ (fractol->image->size_line * y));
 		fractol->c = translate(x, y, fractol);
