@@ -50,6 +50,7 @@ typedef struct s_fractol
 	long double	factor_y;
 	long double	offset_x;
 	long double	offset_y;
+	long double	scale;
 	int			*data;
 	t_image		*image;
 	int			(*fractal)();
@@ -69,39 +70,45 @@ typedef enum e_error
 }	t_error;
 
 /* Prints help message on the cli. */
-void	print_help(const char *fractol);
+void		print_help(const char *fractol);
 
 /* Parses arguments passed to the program. */
-void	argparse(int argc, char **argv, t_fractol *fractol);
+void		argparse(int argc, char **argv, t_fractol *fractol);
 
 /* Iterates a complex number to check if it is part of the Mandelbrot Set */
-int		mandelbrot(t_fractol *fractol);
+int			mandelbrot(t_fractol *fractol);
 
 /* Iterates a complex number to check if it is part of the Julia Set */
-int		julia(t_fractol *fractol);
+int			julia(t_fractol *fractol);
 
 /* Sets default values for `t_fractol`. */
-void	set_defaults(t_fractol *fractol);
+void		set_defaults(t_fractol *fractol);
+
+/* Sets default viewport for `t_fractol`. */
+void		set_default_viewport(t_fractol *fractol);
 
 /* Initializes `fractol` */
-void	init(t_fractol *fractol);
+void		init(t_fractol *fractol);
 
 /* Registers fractol keys */
-void	register_keys(t_fractol *fractol);
+void		register_keys(t_fractol *fractol);
 
 /* Terminates fractol */
-void	kill(t_fractol *fractol, int code);
+void		kill(t_fractol *fractol, int code);
 
 /* Raises an `t_error` and terminates the program */
-void	raise(t_error code, const char *argument, t_fractol *fractol);
+void		raise(t_error code, const char *argument, t_fractol *fractol);
+
+/* Translates pixel coordinates to complex plane point */
+t_complex	translate(int x, int y, t_fractol *fractol);
 
 /* Gets the color for the number of iterations */
-int		get_color(int iteration);
+int			get_color(int iteration);
 
 /* Displays the fractal */
-int		display_fractal(t_fractol *fractol);
+int			display_fractal(t_fractol *fractol);
 
 /* Handles the computation of zoom parameters */
-void	zoom(int z, t_fractol *fractol);
+void		zoom(int z, t_fractol *fractol, int mouse_x, int mouse_y);
 
 #endif

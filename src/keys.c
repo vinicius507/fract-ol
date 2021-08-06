@@ -22,9 +22,7 @@ int	keys(int key, t_fractol *fractol)
 	}
 	else if (key == R_KEY)
 	{
-		zoom(0, fractol);
-		fractol->offset_x = 0;
-		fractol->offset_y = 0;
+		set_default_viewport(fractol);
 		display_fractal(fractol);
 	}
 	else
@@ -36,16 +34,20 @@ int	mouse_keys(int key, unsigned int px, unsigned int py, t_fractol *fractol)
 {
 	if (key == MWHEEL_UP)
 	{
-		zoom(1, fractol);
+		zoom(1, fractol, px, py);
 		display_fractal(fractol);
 	}
 	else if (key == MWHEEL_DOWN)
 	{
-		zoom(-1, fractol);
+		zoom(-1, fractol, px, py);
 		display_fractal(fractol);
 	}
 	else
-		printf("%d %d\n", px, py);
+		printf("%d: %Lf %d: %Lf\n",
+			px,
+			px * fractol->factor_x - fractol->offset_x,
+			py,
+			-(py * fractol->factor_y - fractol->offset_y));
 	return (0);
 }
 
