@@ -81,6 +81,10 @@ int			mandelbrot(t_fractol *fractol);
 /* Iterates a complex number to check if it is part of the Julia Set */
 int			julia(t_fractol *fractol);
 
+/* Iterates a complex number to check if it is part of the Mandelbar
+ * Set(Tricorn) */
+int			mandelbar(t_fractol *fractol);
+
 /* Sets default values for `t_fractol`. */
 void		set_defaults(t_fractol *fractol);
 
