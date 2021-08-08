@@ -15,7 +15,7 @@
 void	print_help(const char *fractol)
 {
 	printf("Usage: %s FRACTAL [FRACTAL_OPTIONS]\n\n"
-		"Fractal options are: Mandelbrot, Julia, Mandelbar\n\n"
+		"Available fractals are: Mandelbrot, Julia, Mandelbar\n\n"
 		"Some fractals require options to work:\n"
 		"\tJulia\tReceives a complex number in the following form: 0.0+0.0i",
 		fractol);
