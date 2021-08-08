@@ -999,6 +999,22 @@
       "-Wall",
       "-Wextra",
       "-Werror",
+      "-I./includes",
+      "-c",
+      "-o",
+      "build/ft_strcmp.o",
+      "src/ft_strcmp.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol/libft",
+    "file": "/home/vinicius/Code/42/fractol/libft/src/ft_strcmp.c",
+    "output": "/home/vinicius/Code/42/fractol/libft/build/ft_strcmp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
       "-O3",
       "-pg",
       "-c",
@@ -1286,5 +1302,26 @@
     "directory": "/home/vinicius/Code/42/fractol",
     "file": "/home/vinicius/Code/42/fractol/src/defaults.c",
     "output": "/home/vinicius/Code/42/fractol/build/defaults.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-O3",
+      "-pg",
+      "-c",
+      "-I./includes",
+      "-I./libft/includes",
+      "-I./mlx",
+      "-c",
+      "-o",
+      "build/mandelbar.o",
+      "src/mandelbar.c"
+    ],
+    "directory": "/home/vinicius/Code/42/fractol",
+    "file": "/home/vinicius/Code/42/fractol/src/mandelbar.c",
+    "output": "/home/vinicius/Code/42/fractol/build/mandelbar.o"
   }
 ]
