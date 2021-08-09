@@ -44,7 +44,7 @@ void	argparse(int argc, char **argv, t_fractol *fractol)
 		if (!ft_strcmp(argv[i], "--help"))
 		{
 			print_help(fractol->fractol);
-			kill(fractol, 0);
+			kill(fractol, EXIT_SUCCESS);
 		}
 		else
 		{

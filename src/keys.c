@@ -16,7 +16,7 @@
 int	keys(int key, t_fractol *fractol)
 {
 	if (key == ESC_KEY || key == Q_KEY)
-		kill(fractol, 0);
+		kill(fractol, EXIT_SUCCESS);
 	else if (key == R_KEY)
 		set_default_viewport(fractol);
 	else if (key == W_KEY || key == UP_KEY)

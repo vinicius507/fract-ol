@@ -15,6 +15,8 @@
 static void	init_image(t_fractol *fractol)
 {
 	fractol->image = ft_calloc(1, sizeof(t_image));
+	if (fractol->image == NULL)
+		raise(SYS_ERROR, NULL, fractol);
 	fractol->image->image = mlx_new_image(fractol->mlx,
 			fractol->width,
 			fractol->height);

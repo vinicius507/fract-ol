@@ -46,9 +46,13 @@ int	display_fractal(t_fractol *fractol)
 		fractol->image->image,
 		0, 0);
 	temp = ft_ldtoa(1 / fractol->scale, 2);
+	if (temp == NULL)
+		raise(SYS_ERROR, NULL, fractol);
 	zoom = ft_strjoin("Zoom: ", temp);
-	mlx_string_put(fractol->mlx, fractol->window, 24, 24, 0xffffff, zoom);
 	free(temp);
+	if (zoom == NULL)
+		raise(SYS_ERROR, NULL, fractol);
+	mlx_string_put(fractol->mlx, fractol->window, 18, 24, 0xffffff, zoom);
 	free(zoom);
 	return (0);
 }
