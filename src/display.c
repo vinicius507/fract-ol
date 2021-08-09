@@ -37,10 +37,18 @@ static int	create_pixelmap(t_fractol *fractol)
 
 int	display_fractal(t_fractol *fractol)
 {
+	char	*zoom;
+	char	*temp;
+
 	create_pixelmap(fractol);
 	mlx_put_image_to_window(fractol->mlx,
 		fractol->window,
 		fractol->image->image,
 		0, 0);
+	temp = ft_ldtoa(1 / fractol->scale, 2);
+	zoom = ft_strjoin("Zoom: ", temp);
+	mlx_string_put(fractol->mlx, fractol->window, 24, 24, 0xffffff, zoom);
+	free(temp);
+	free(zoom);
 	return (0);
 }
