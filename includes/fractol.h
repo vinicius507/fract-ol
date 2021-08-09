@@ -75,6 +75,9 @@ void		print_help(const char *fractol);
 /* Parses arguments passed to the program. */
 void		argparse(int argc, char **argv, t_fractol *fractol);
 
+/* Parses fractal arguments. */
+void		get_fractal_args(char *opt, t_fractol *fractol);
+
 /* Iterates a complex number to check if it is part of the Mandelbrot Set */
 int			mandelbrot(t_fractol *fractol);
 
