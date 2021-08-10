@@ -1,6 +1,6 @@
 NAME = fractol
 CC = clang
-CFLAGS = -Wall -Wextra -Werror -O3 -pg
+CFLAGS = -Wall -Wextra -Werror -O3
 RM = rm -f
 
 INCLUDESDIR=./includes ./libft/includes ./mlx
