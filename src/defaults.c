@@ -34,7 +34,7 @@ void	set_default_viewport(t_fractol *fractol)
 void	set_defaults(t_fractol *fractol)
 {
 	fractol->fractol = "fractol";
-	fractol->fractal = NULL;
+	fractol->fn = NULL;
 	fractol->mlx = NULL;
 	fractol->window = NULL;
 	fractol->image = NULL;

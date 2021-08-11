@@ -53,7 +53,7 @@ typedef struct s_fractol
 	long double	scale;
 	int			*data;
 	t_image		*image;
-	int			(*fractal)();
+	int			(*fn)();
 }	t_fractol;
 
 /* Exit Codes for `fractol` */

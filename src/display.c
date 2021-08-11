@@ -29,7 +29,7 @@ static int	create_pixelmap(t_fractol *fractol)
 				+ (fractol->image->size_line * y));
 		fractol->c = translate(x, y, fractol);
 		color = mlx_get_color_value(fractol->mlx,
-				get_color(fractol->fractal(fractol)));
+				get_color(fractol->fn(fractol)));
 		data[x] = color;
 	}
 	return (0);
