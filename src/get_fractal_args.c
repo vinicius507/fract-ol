@@ -72,5 +72,4 @@ void	get_fractal_args(char *opt, t_fractol *fractol)
 		raise(INVALID_FRACTAL_OPTIONS, opt, fractol);
 	fractol->z.real = ft_atold(opt);
 	fractol->z.complex = ft_atold(ptr);
-	printf("%Lf %Lf\n", fractol->z.real, fractol->z.complex);
 }
