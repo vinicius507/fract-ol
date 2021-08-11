@@ -14,19 +14,19 @@
 
 static int	set_fractal(int *i, int argc, char **argv, t_fractol *fractol)
 {
-	if (fractol->fractal == NULL && !ft_strcmp(argv[*i], "Mandelbrot"))
-		fractol->fractal = mandelbrot;
-	else if (fractol->fractal == NULL && !ft_strcmp(argv[*i], "Julia"))
+	if (fractol->fn == NULL && !ft_strcmp(argv[*i], "Mandelbrot"))
+		fractol->fn = mandelbrot;
+	else if (fractol->fn == NULL && !ft_strcmp(argv[*i], "Julia"))
 	{
 		*i += 1;
 		if (*i == argc)
 			raise(NO_FRACTAL_OPTIONS, NULL, fractol);
-		fractol->fractal = julia;
+		fractol->fn = julia;
 		get_fractal_args(argv[*i], fractol);
 	}
-	else if (fractol->fractal == NULL && !ft_strcmp(argv[*i], "Mandelbar"))
-		fractol->fractal = mandelbar;
-	if (fractol->fractal == NULL)
+	else if (fractol->fn == NULL && !ft_strcmp(argv[*i], "Mandelbar"))
+		fractol->fn = mandelbar;
+	if (fractol->fn == NULL)
 		return (1);
 	return (0);
 }
