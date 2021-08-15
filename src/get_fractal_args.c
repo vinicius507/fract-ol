@@ -15,12 +15,15 @@
 static int	check_complex_d(char **opt)
 {
 	size_t	offset;
+	int		invalid;
 
 	offset = 0;
+	invalid = 1;
 	while ((*opt)[offset] != '.'
 		&& (*opt)[offset] != '+' && (*opt)[offset] != '-'
 		&& (*opt)[offset] != 'i')
 	{
+		invalid = 0;
 		if (!ft_isdigit((*opt)[offset++]))
 			return (1);
 	}
@@ -29,7 +32,7 @@ static int	check_complex_d(char **opt)
 	while (ft_isdigit((*opt)[offset]))
 		offset++;
 	*opt += offset;
-	return (0);
+	return (invalid);
 }
 
 static int	check_complex(char *opt)
@@ -48,8 +51,8 @@ static int	check_complex(char *opt)
 			if (*opt == '+' || *opt == '-')
 				opt++;
 		}
-		else if (table[offset] == 'd')
-			check_complex_d(&opt);
+		else if (table[offset] == 'd' && check_complex_d(&opt))
+			return (1);
 		else if (table[offset] == 'i')
 		{
 			if (ft_strcmp("i", opt))

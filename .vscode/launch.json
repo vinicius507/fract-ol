@@ -10,6 +10,17 @@
 			"args": [
 				"Mandelbrot"
 			]
+		},
+		{
+			"name": "Julia",
+			"type": "lldb",
+			"request": "launch",
+			"cwd": "${workspaceFolder}",
+			"program": "${workspaceFolder}/a.out",
+			"args": [
+				"Julia",
+				"0.285+0.01i"
+			]
 		}
 	]
 }
