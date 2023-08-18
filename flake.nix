@@ -42,7 +42,7 @@
       };
     });
     packages = forEachSystem ({pkgs}: {
-      default = self.packages.${pkgs.system}.libft;
+      default = self.packages.${pkgs.system}.fract-ol;
       minilibx = import ./nix/pkgs/minilibx.nix {
         inherit (pkgs) lib stdenv fetchFromGitHub;
         inherit (pkgs.xorg) libX11 libXext;
