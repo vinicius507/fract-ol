@@ -18,7 +18,7 @@ It provides a (single-threaded) fractal visualizer with _ok_ performance.
 
 ![Some visualizations from the Fractol Program](/assets/fractol.gif)
 
-# Introduction
+## Introduction
 The **fractol** program provides visualization of the following fractals:
 
 - Mandelbrot Set
@@ -43,3 +43,11 @@ Available fractals are: Mandelbrot, Julia, Mandelbar
 Some fractals require options to work:
 	Julia	Receives a complex number in the following form: 0.0+0.0i
 ```
+
+### Controls
+You can control the **fractol** program by using the following keybindings:
+
+- Navigate the fractal using `WASD` or arrow keys.
+- Zoom in or out from the fractal using the mouse wheel.
+- Restore the viewport using the `R` key.
+- `Q` or `ESQ` to exit the program.
