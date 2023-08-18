@@ -1,11 +1,9 @@
 NAME = fractol
-CC = clang
+CC = cc
 CFLAGS = -Wall -Wextra -Werror -O3
 RM = rm -f
 
-INCLUDESDIR=./includes ./libft/includes ./mlx
-INCLUDES := $(addprefix -I,$(INCLUDESDIR))
-SRCDIR =./src
+SRCDIR =./srcs
 OBJDIR =./build
 
 SRCS = fractol.c get_fractal_args.c argparse.c complex.c \
@@ -14,25 +12,23 @@ SRCS = fractol.c get_fractal_args.c argparse.c complex.c \
 OBJS := $(addprefix $(OBJDIR)/,$(SRCS:.c=.o))
 SRCS := $(addprefix $(SRCDIR),$(SRCS))
 
-MLXDIR = ./mlx
-MLX = $(MLXDIR)/libmlx_Linux.a
-MLX_FLAGS = -L$(MLXDIR) -lmlx_Linux -lXext -lX11 -lm
+MLXDIR ?= ./mlx
+MLX_FLAGS := -L$(MLXDIR)/lib -lmlx -lXext -lX11 -lm
 
-LIBFTDIR = ./libft
-LIBFT = $(LIBFTDIR)/libft.a
-LIBFT_FLAGS = -L$(LIBFTDIR) -lft
+LIBFTDIR ?= ./libft
+LIBFT := $(LIBFTDIR)/lib/libft.a
+LIBFT_FLAGS := -L$(LIBFTDIR)/lib -lft
+
+INCLUDES := -I./include -I$(LIBFTDIR)/include -I$(MLXDIR)/include
 
 all: $(NAME)
 
-$(NAME): $(MLX) $(LIBFT) $(OBJS)
+$(NAME): $(LIBFT) $(OBJS)
 	$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) $(MLX_FLAGS) $(LIBFT_FLAGS) -o $@
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	mkdir -p $(OBJDIR)
-	$(CC) $(CFLAGS) -c $(INCLUDES) $< -c -o $@
-
-$(MLX):
-	make -C $(MLXDIR)
+	$(CC) $(CFLAGS) $(INCLUDES) $< -c -o $@
 
 $(LIBFT):
 	make -C $(LIBFTDIR)

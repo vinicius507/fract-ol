@@ -1,0 +1,88 @@
+{
+  "nodes": {
+    "ft-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1692307336,
+        "narHash": "sha256-Dn/Wgw/YXpGxuCVx6bSGdSgNHJ8m0Layhlx1agSIenM=",
+        "owner": "vinicius507",
+        "repo": "42-nix",
+        "rev": "0052ecb92977a01f765de3a962597b1300c3c440",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vinicius507",
+        "repo": "42-nix",
+        "type": "github"
+      }
+    },
+    "ft-nix_2": {
+      "inputs": {
+        "nixpkgs": [
+          "libft",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1692307336,
+        "narHash": "sha256-Dn/Wgw/YXpGxuCVx6bSGdSgNHJ8m0Layhlx1agSIenM=",
+        "owner": "vinicius507",
+        "repo": "42-nix",
+        "rev": "0052ecb92977a01f765de3a962597b1300c3c440",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vinicius507",
+        "repo": "42-nix",
+        "type": "github"
+      }
+    },
+    "libft": {
+      "inputs": {
+        "ft-nix": "ft-nix_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1692380568,
+        "narHash": "sha256-ZgqQhdaYRvwu/IQUCP9LWYEzwj/EPm0Gskb1Z7FzSfc=",
+        "owner": "vinicius507",
+        "repo": "libft",
+        "rev": "13d48c517d1a4aeed97df2f8ed687747b63498b8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vinicius507",
+        "repo": "libft",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1691654369,
+        "narHash": "sha256-gSILTEx1jRaJjwZxRlnu3ZwMn1FVNk80qlwiCX8kmpo=",
+        "path": "/nix/store/63s5a8i5vsrf5wkmfzvk5hyiim24p2jr-source",
+        "rev": "ce5e4a6ef2e59d89a971bc434ca8ca222b9c7f5e",
+        "type": "path"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "root": {
+      "inputs": {
+        "ft-nix": "ft-nix",
+        "libft": "libft",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

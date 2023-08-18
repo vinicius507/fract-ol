@@ -16,9 +16,9 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <math.h>
+# include <mlx.h>
 # include "libft.h"
 # include "ft_complex.h"
-# include "mlx.h"
 
 # define MAX_ITER 80
 # define ZOOM_STEP 0.05L
