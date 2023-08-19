@@ -25,7 +25,12 @@
         f {
           pkgs = import nixpkgs {
             inherit system;
-            overlays = [ft-nix.overlays.norminette];
+            overlays = [
+              ft-nix.overlays.norminette
+              libft.overlays.libft
+              self.overlays.fract-ol
+              self.overlays.minilibx
+            ];
           };
         });
   in {
@@ -42,19 +47,26 @@
       };
     });
     packages = forEachSystem ({pkgs}: {
-      default = self.packages.${pkgs.system}.fract-ol;
+      default = pkgs.fract-ol;
+      fract-ol = import ./nix/pkgs/fract-ol.nix {
+        inherit (pkgs) lib libft minilibx;
+        inherit (pkgs.xorg) libX11 libXext;
+        inherit (pkgs.llvmPackages_12) stdenv;
+      };
       minilibx = import ./nix/pkgs/minilibx.nix {
         inherit (pkgs) lib stdenv fetchFromGitHub;
         inherit (pkgs.xorg) libX11 libXext;
       };
-      fract-ol = import ./nix/pkgs/fract-ol.nix {
-        inherit (pkgs) lib;
-        inherit (pkgs.xorg) libX11 libXext;
-        inherit (pkgs.llvmPackages_12) stdenv;
-        libft = libft.packages.${pkgs.system}.default;
-        minilibx = self.packages.${pkgs.system}.minilibx;
-      };
     });
+    overlays = {
+      default = self.overlays.fract-ol;
+      fract-ol = final: _: {
+        fract-ol = self.packages.${final.system}.fract-ol;
+      };
+      minilibx = final: _: {
+        minilibx = self.packages.${final.system}.minilibx;
+      };
+    };
     devShells = forEachSystem ({pkgs}: let
       mkShell = pkgs.mkShell.override {inherit (pkgs.llvmPackages_12) stdenv;};
     in {

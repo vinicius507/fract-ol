@@ -49,11 +49,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1692380568,
-        "narHash": "sha256-ZgqQhdaYRvwu/IQUCP9LWYEzwj/EPm0Gskb1Z7FzSfc=",
+        "lastModified": 1692466028,
+        "narHash": "sha256-MP3wrfv/uEdZR7XI78BVBS2u4o3I+deFZb/UZC6zYv8=",
         "owner": "vinicius507",
         "repo": "libft",
-        "rev": "13d48c517d1a4aeed97df2f8ed687747b63498b8",
+        "rev": "29b5a863d36038ce94f7550c47206595d2c88702",
         "type": "github"
       },
       "original": {
