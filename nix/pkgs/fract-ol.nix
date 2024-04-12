@@ -26,5 +26,6 @@ stdenv.mkDerivation {
   '';
   meta = with lib; {
     license = licenses.agpl3Only;
+    mainProgram = "fractol";
   };
 }
